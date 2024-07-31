@@ -116,12 +116,12 @@ print('Valor final de la cartera: %.2f' % cerebro.broker.getvalue())
 
 
 #guardamos las operaciones en un excel
-df_operaciones = pd.DataFrame(operaciones, columns=['Fecha', 'Tipo de operación', 'Estrategia', 'Símbolo', 'Valor','Tamaño de la orden', 'total de la compra','Saldo Disponible Despues de la Operacion',  'Saldo De la Cuenta'])
+df_operaciones = pd.DataFrame(operaciones, columns=['Fecha', 'Tipo de operación', 'Estrategia', 'Símbolo', 'Valor','Tamaño de la orden', 'total de la compra','Saldo Disponible Despues de la Operacion',  'Total De la Cuenta'])
 df_operaciones.to_excel('resultados_backtesting.xlsx', index=False)
 
 # generamos un grafico con el avance del saldo total para ilustrar mejor el desempeño del bot
 plt.figure(figsize=(10, 6))
-plt.plot(df_operaciones['Fecha'], df_operaciones['Saldo De la Cuenta'], label='Saldo Total')
+plt.plot(df_operaciones['Fecha'], df_operaciones['Total De la Cuenta'], label='Saldo Total')
 plt.xlabel('Fecha')
 plt.ylabel('Saldo Total')
 plt.title('Evolución del dinero de la cuenta')
